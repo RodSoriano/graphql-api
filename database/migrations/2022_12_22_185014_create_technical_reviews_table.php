@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('club');
             $table->date('reviewed_at')->nullable();
             $table->text('description');
-            $table->jsonb('detail');
+            $table->string('detail');
             $table->timestamps();
         });
     }
