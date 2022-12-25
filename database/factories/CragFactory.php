@@ -18,7 +18,7 @@ class CragFactory extends Factory
             'route_count' => fake()->numberBetween(1, 100),
             'get_here' => fake()->paragraph(),
             'description' => fake()->sentence(),
-            'detail' => [],
+            'detail' => 'json_string',
         ];
     }
 }

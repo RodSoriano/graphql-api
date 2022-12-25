@@ -25,7 +25,7 @@ class RouteFactory extends Factory
             'first_ascend' => fake()->name(),
             'bolted_at' => fake()->dateTimeThisCentury(),
             'description' => fake()->sentence(),
-            'detail' => [],
+            'detail' => 'json_string',
         ];
     }
 }

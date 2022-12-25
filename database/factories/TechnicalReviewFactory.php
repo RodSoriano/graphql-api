@@ -18,7 +18,7 @@ class TechnicalReviewFactory extends Factory
             'club' => fake()->company(),
             'reviewed_at' => fake()->date(),
             'description' => fake()->sentence(),
-            'detail' => [],
+            'detail' => 'json_string',
         ];
     }
 }

@@ -18,7 +18,7 @@ class AreaFactory extends Factory
             'location' => fake()->streetAddress(),
             'route_count' => fake()->numberBetween(1, 10),
             'description' => fake()->sentence(),
-            'detail' => [],
+            'detail' => 'json_string',
         ];
     }
 }
