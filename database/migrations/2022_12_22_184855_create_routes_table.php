@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('first_ascend');
             $table->date('bolted_at');
             $table->text('description');
-            $table->string('detail');
+            $table->json('detail');
             $table->timestamps();
         });
     }
