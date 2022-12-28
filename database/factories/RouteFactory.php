@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Route;
+use App\Models\Area;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -10,22 +11,21 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class RouteFactory extends Factory
 {
+    use JsonData;
+
     public function definition(): array
     {
         return [
-            'area_id' => fake()->randomDigit(),
+            'area_id' => Area::inRandomOrder()->first(),
             'name' => fake()->streetSuffix(),
             'grade' => fake()->randomFloat(),
-            'quick_draw_count' => fake()->randomDigit(),
+            'quick_draw_count' => fake()->numberBetween(1, 15),
             'length' => fake()->randomDigitNot(0),
-            'setters' => [
-                fake()->name(),
-                fake()->name(),
-            ],
+            'setters' => fake()->name(),
             'first_ascend' => fake()->name(),
             'bolted_at' => fake()->dateTimeThisCentury(),
             'description' => fake()->sentence(),
-            'detail' => 'json_string',
+            'detail' => json_encode($this->createKeyValue()),
         ];
     }
 }

@@ -10,15 +10,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CragFactory extends Factory
 {
+    use JsonData;
+
     public function definition(): array
     {
         return [
             'name' => fake()->streetSuffix(),
-            'location' =>fake()->streetAddress(),
+            'location' => fake()->streetAddress(),
             'route_count' => fake()->numberBetween(1, 100),
             'get_here' => fake()->paragraph(),
             'description' => fake()->sentence(),
-            'detail' => 'json_string',
+            'detail' => json_encode($this->createKeyValue()),
         ];
     }
 }
