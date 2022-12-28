@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('location');
             $table->integer('route_count');
             $table->text('description');
-            $table->jsonb('detail');
+            $table->json('detail');
             $table->timestamps();
         });
     }
