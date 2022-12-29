@@ -1,0 +1,17 @@
+#import crag.graphql
+#import area.graphql
+#import route.graphql
+
+scalar DateTime
+scalar Json
+
+type Query {
+    crags: [Crag!]! @all
+    crag(id: ID! @eq): Crag! @find
+
+    areas: [Area!]! @all
+    area(id: ID! @eq): Area! @find
+
+    routes: [Route!]! @all
+    route(id: ID! @eq): Route! @find
+}
