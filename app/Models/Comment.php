@@ -16,6 +16,11 @@ class Comment extends Model
         'comment',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function commentable(): MorphTo
     {
         return $this->morphTo();
