@@ -1,0 +1,9 @@
+type Crag {
+    id: ID!
+    name: String!
+    location: String!
+    route_count: Int!
+    get_here: String!
+    description: String
+    detail: Json
+}
