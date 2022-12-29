@@ -1,0 +1,13 @@
+type Route {
+    id: ID!
+    area_id: Int!
+    name: String!
+    grade: String!
+    quick_draw_count: Int!
+    length: String!
+    setters: String!
+    first_ascend: String!
+    bolted_at: DateTime!
+    description: String!
+    detail: Json
+}
