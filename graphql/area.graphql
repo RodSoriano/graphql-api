@@ -1,0 +1,9 @@
+type Area {
+    id: ID!
+    crag_id: Int!
+    name: String!
+    location: String!
+    route_count: Int!
+    description: String!
+    detail: Json
+}
