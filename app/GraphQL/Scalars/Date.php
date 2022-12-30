@@ -16,7 +16,9 @@ final class Date extends ScalarType
 {
     public function serialize(mixed $value): false|string
     {
-        return date('Y/m/d', $value);
+        $timeFormat = strtotime($value);
+
+        return date('Y:m:d', $timeFormat);
     }
 
     /**
@@ -27,9 +29,7 @@ final class Date extends ScalarType
     {
         $this->dateValidation($value);
 
-        $timeFormat = strtotime($value);
-
-        return date('Y:m:d:H:i:s', $timeFormat);
+        return date('Y:m:d:H:i:s', strtotime($value));
     }
 
     /**
