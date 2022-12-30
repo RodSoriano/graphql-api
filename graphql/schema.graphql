@@ -15,5 +15,6 @@ type Query {
     routes: [Route!]! @all
     route(id: ID! @eq): Route! @find
 
-    routeComment(id: ID!): Json!
+    routeComments(id: ID!): Json!
+    routeReviews(id: ID!): Json!
 }
