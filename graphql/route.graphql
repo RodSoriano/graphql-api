@@ -7,7 +7,7 @@ type Route {
     length: String!
     setters: String!
     first_ascend: String!
-    bolted_at: DateTime!
+    bolted_at: Date!
     description: String!
     detail: Json
 }

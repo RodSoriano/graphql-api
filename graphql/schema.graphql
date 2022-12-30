@@ -2,7 +2,7 @@
 #import area.graphql
 #import route.graphql
 
-scalar DateTime
+scalar Date
 scalar Json
 
 type Query {
