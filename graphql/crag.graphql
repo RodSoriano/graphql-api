@@ -6,4 +6,6 @@ type Crag {
     get_here: String!
     description: String
     detail: Json
+
+    areas: [Area!]!
 }
