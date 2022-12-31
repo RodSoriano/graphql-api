@@ -10,4 +10,6 @@ type Route {
     bolted_at: Date!
     description: String!
     detail: Json
+
+    area: Area!
 }
