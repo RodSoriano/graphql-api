@@ -6,4 +6,7 @@ type Area {
     route_count: Int!
     description: String!
     detail: Json
+
+    crag: Crag!
+    routes: [Route!]!
 }
