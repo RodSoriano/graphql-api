@@ -23,8 +23,6 @@ final class Json extends ScalarType
      */
     public function parseValue(mixed $value): false|string
     {
-        $this->validateJson($value);
-
         return json_encode($value);
     }
 
@@ -40,7 +38,7 @@ final class Json extends ScalarType
     {
         // TODO implement validation
 
-        return $valueNode->value;
+        return json_encode($valueNode->value);
     }
 
     private function validateJson(mixed $data): void
