@@ -10,3 +10,20 @@ type Area {
     crag: Crag!
     routes: [Route!]!
 }
+
+input createAreaInput @validator {
+    crag_id: Int!
+    name: String!
+    location: String!
+    route_count: Int!
+    description: String!
+    detail: Json
+}
+
+input updateAreaInput @validator {
+    name: String
+    location: String
+    route_count: Int
+    description: String
+    detail: Json
+}
