@@ -4,7 +4,6 @@ namespace App\GraphQL\Scalars;
 
 use GraphQL\Language\AST\Node;
 use GraphQL\Type\Definition\ScalarType;
-use JsonException;
 
 /**
  * Needs refactoring on finishing the whole file,
@@ -34,19 +33,23 @@ final class Json extends ScalarType
      *   user(email: "user@example.com")
      * }
      */
-    public function parseLiteral(Node $valueNode, ?array $variables = null): mixed
+    public function parseLiteral(Node $valueNode, ?array $variables = null): false|string
     {
-        // TODO implement validation
+        $keys = [];
+        $values = [];
 
-        return json_encode($valueNode->value);
-    }
+        $jsonData = json_decode($valueNode, true);
 
-    private function validateJson(mixed $data): void
-    {
-        try {
-            json_decode($data, flags: JSON_THROW_ON_ERROR);
-        } catch (JsonException $e) {
-            echo $e->getMessage();
+        $jsonData = $jsonData['fields'];
+
+        foreach ($jsonData as $data) {
+            $keys[] = $data['name']['value'];
+
+            $values[] = $data['value']['value'];
         }
+
+        $result = array_combine($keys, $values);
+
+        return json_encode($result);
     }
 }
