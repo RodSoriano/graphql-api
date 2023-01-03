@@ -35,21 +35,19 @@ final class Json extends ScalarType
      */
     public function parseLiteral(Node $valueNode, ?array $variables = null): false|string
     {
-        $keys = [];
-        $values = [];
+        $results = [];
 
         $jsonData = json_decode($valueNode, true);
 
         $jsonData = $jsonData['fields'];
 
         foreach ($jsonData as $data) {
-            $keys[] = $data['name']['value'];
+            $key = $data['name']['value'];
+            $value = $data['value']['value'];
 
-            $values[] = $data['value']['value'];
+            $results[$key] = $value;
         }
 
-        $result = array_combine($keys, $values);
-
-        return json_encode($result);
+        return json_encode($results);
     }
 }
