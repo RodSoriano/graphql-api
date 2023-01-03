@@ -19,3 +19,7 @@ type Query {
     routeComments(id: ID!): Json!
     routeReviews(id: ID!): Json!
 }
+
+type Mutation {
+    createCrag(input: createCragInput! @spread): Crag @create
+}
