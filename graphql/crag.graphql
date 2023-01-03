@@ -4,7 +4,7 @@ type Crag {
     location: String!
     route_count: Int!
     get_here: String!
-    description: String
+    description: String!
     detail: Json
 
     areas: [Area!]!
@@ -16,5 +16,14 @@ input createCragInput @validator {
     route_count: Int!
     get_here: String!
     description: String!
+    detail: Json
+}
+
+input updateCragInput @validator {
+    name: String
+    location: String
+    route_count: Int
+    get_here: String
+    description: String
     detail: Json
 }
