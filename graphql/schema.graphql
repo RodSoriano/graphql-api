@@ -22,4 +22,6 @@ type Query {
 
 type Mutation {
     createCrag(input: createCragInput! @spread): Crag @create
+    updateCrag(id: ID!, input: updateCragInput! @spread): Crag @update
+    deleteCrag(id: ID!): Crag @delete
 }
