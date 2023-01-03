@@ -9,3 +9,12 @@ type Crag {
 
     areas: [Area!]!
 }
+
+input createCragInput @validator {
+    name: String!
+    location: String!
+    route_count: Int!
+    get_here: String!
+    description: String!
+    detail: Json
+}
