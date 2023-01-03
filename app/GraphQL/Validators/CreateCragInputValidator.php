@@ -9,12 +9,12 @@ final class CreateCragInputValidator extends Validator
     public function rules(): array
     {
         return [
-            'name' => ['required', 'min:2', 'max:30'],
-            'location' => ['required'],
-            'route_count' => ['required'],
-            'get_here' => ['required'],
-            'description' => ['required'],
-            'detail' => ['required'],
+            'name' => ['required', 'string', 'min:5', 'max:30'],
+            'location' => ['required', 'string', 'min:5', 'max:100'],
+            'route_count' => ['required', 'int', 'min:1'],
+            'get_here' => ['required', 'string', 'min:5', 'max:250'],
+            'description' => ['required', 'string', 'min:5', 'max:250'],
+            'detail' => ['required', 'json'],
         ];
     }
 }
