@@ -9,6 +9,6 @@ final class RouteReviews
 {
     public function __invoke(mixed $_, array $args): Collection
     {
-        return Route::find($args['id'])->technicalReviews;
+        return Route::find($args['id'])->technicalReviews->sortByDesc('created_at');
     }
 }

@@ -9,6 +9,6 @@ final class RouteComments
 {
     public function __invoke(mixed $rootValue, array $args): Collection
     {
-        return Route::find($args['id'])->comments;
+        return Route::find($args['id'])->comments->sortByDesc('created_at');
     }
 }

@@ -9,6 +9,6 @@ final class CragComments
 {
     public function __invoke(mixed $_, array $args): Collection
     {
-        return Crag::find($args['id'])->comments;
+        return Crag::find($args['id'])->comments->sortByDesc('created_at');
     }
 }

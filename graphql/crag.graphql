@@ -8,7 +8,7 @@ type Crag {
     detail: Json
 
     areas: [Area!]! @with
-    comments: [Comment!]! @with
+    comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC)
 }
 
 input createCragInput @validator {

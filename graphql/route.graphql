@@ -12,5 +12,5 @@ type Route {
     detail: Json
 
     area: Area! @with
-    comments: [Comment!]! @with
+    comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC)
 }
