@@ -7,7 +7,8 @@ type Crag {
     description: String!
     detail: Json
 
-    areas: [Area!]!
+    areas: [Area!]! @with
+    comments: [Comment!]! @with
 }
 
 input createCragInput @validator {
