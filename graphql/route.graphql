@@ -11,5 +11,6 @@ type Route {
     description: String!
     detail: Json
 
-    area: Area!
+    area: Area! @with
+    comments: [Comment!]! @with
 }
