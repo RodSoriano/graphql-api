@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->morphs('commentable');
             $table->text('comment');
+            $table->boolean('visible');
             $table->timestamps();
         });
     }

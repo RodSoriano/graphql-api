@@ -16,6 +16,7 @@ class CommentFactory extends Factory
             'commentable_type' => fake()->word(),
             'commentable_id' => fake()->randomNumber(),
             'comment' => fake()->sentence(),
+            'visible' => fake()->boolean(),
         ];
     }
 }
