@@ -9,7 +9,7 @@ type Area {
 
     crag: Crag! @with
     routes: [Route!]! @with
-    comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC)
+    comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC) @eq(key: "visible", value: true)
 }
 
 input createAreaInput @validator {
