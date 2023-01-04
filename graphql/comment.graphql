@@ -1,0 +1,7 @@
+type Comment {
+    id: ID!
+    commentable_type: String!
+    commentable_id: Int!
+    comment: String!
+    visible: Boolean
+}
