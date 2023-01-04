@@ -7,8 +7,9 @@ type Area {
     description: String!
     detail: Json
 
-    crag: Crag!
-    routes: [Route!]!
+    crag: Crag! @with
+    routes: [Route!]! @with
+    comments: [Comment!]! @with
 }
 
 input createAreaInput @validator {
