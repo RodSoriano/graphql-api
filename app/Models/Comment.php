@@ -18,6 +18,7 @@ class Comment extends Model
     ];
 
     protected $hidden = [
+        'visible',
         'created_at',
         'updated_at',
     ];
