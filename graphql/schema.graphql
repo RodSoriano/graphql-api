@@ -30,7 +30,7 @@ type Mutation {
     updateArea(id: ID!, input: updateAreaInput! @spread): Area @update
     deleteArea(id: ID!): Area @delete
 
-    #    createRoute(input: createRouteInput! @spread): Route @create
-    #    updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
-    #    deleteRoute(id: ID!): Route @delete
+    createRoute(input: createRouteInput! @spread): Route @create
+    updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
+    deleteRoute(id: ID!): Route @delete
 }
