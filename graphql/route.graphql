@@ -14,3 +14,28 @@ type Route {
     area: Area! @with
     comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC) @eq(key: "visible", value: true)
 }
+
+input createRouteInput @validator {
+    area_id: Int!
+    name: String!
+    grade: String!
+    quick_draw_count: Int!
+    length: String!
+    setters: String!
+    first_ascend: String!
+    bolted_at: Date!
+    description: String!
+    detail: Json
+}
+
+input updateRouteInput @validator {
+    name: String
+    grade: String
+    quick_draw_count: Int
+    length: String
+    setters: String
+    first_ascend: String
+    bolted_at: Date
+    description: String
+    detail: Json
+}
