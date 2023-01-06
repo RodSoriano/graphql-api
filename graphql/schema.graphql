@@ -33,4 +33,10 @@ type Mutation {
     createRoute(input: createRouteInput! @spread): Route @create
     updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
     deleteRoute(id: ID!): Route @delete
+
+    createComment(
+        commentable_type: String @rules(apply: ["required"])
+        commentable_id: Int @rules(apply: ["required"])
+        comment: String @rules(apply: ["required"])
+    ): Json
 }
