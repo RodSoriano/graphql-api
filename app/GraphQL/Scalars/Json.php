@@ -5,16 +5,13 @@ namespace App\GraphQL\Scalars;
 use GraphQL\Language\AST\Node;
 use GraphQL\Type\Definition\ScalarType;
 
-/**
- * Needs refactoring on finishing the whole file,
- * make a better json validator and finish the
- * parseLiteral method.
- */
 final class Json extends ScalarType
 {
     public function serialize(mixed $value): mixed
     {
-        return json_decode($value);
+        $data = json_encode($value);
+
+        return json_decode($data);
     }
 
     /**
