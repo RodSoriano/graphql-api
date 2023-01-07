@@ -22,17 +22,17 @@ type Query {
 }
 
 type Mutation {
-    createCrag(input: createCragInput! @spread): Crag @create
-    updateCrag(id: ID!, input: updateCragInput! @spread): Crag @update
-    deleteCrag(id: ID!): Crag @delete
+    # createCrag(input: createCragInput! @spread): Crag @create
+    # updateCrag(id: ID!, input: updateCragInput! @spread): Crag @update
+    # deleteCrag(id: ID!): Crag @delete
 
-    createArea(input: createAreaInput! @spread): Area @create
-    updateArea(id: ID!, input: updateAreaInput! @spread): Area @update
-    deleteArea(id: ID!): Area @delete
+    # createArea(input: createAreaInput! @spread): Area @create
+    # updateArea(id: ID!, input: updateAreaInput! @spread): Area @update
+    # deleteArea(id: ID!): Area @delete
 
-    createRoute(input: createRouteInput! @spread): Route @create
-    updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
-    deleteRoute(id: ID!): Route @delete
+    # createRoute(input: createRouteInput! @spread): Route @create
+    # updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
+    # deleteRoute(id: ID!): Route @delete
 
     createComment(
         commentable_type: String @rules(apply: ["required"])
