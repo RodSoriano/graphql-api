@@ -37,6 +37,6 @@ type Mutation {
     createComment(
         commentable_type: String @rules(apply: ["required"])
         commentable_id: Int @rules(apply: ["required"])
-        comment: String @rules(apply: ["required"])
+        comment: String @rules(apply: ["required"]) @vulgarFilter
     ): Json
 }
