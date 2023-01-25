@@ -9,6 +9,7 @@ scalar Json
 type Query {
     crags: [Crag!]! @all
     crag(id: ID! @eq): Crag! @find
+    cragAreas(id: ID!): Json!
     cragComments(id: ID!): Json!
 
     areas: [Area!]! @all
