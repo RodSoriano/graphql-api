@@ -11,7 +11,7 @@ class RouteSeeder extends Seeder
 {
     public function run(int $quantity = 20): void
     {
-        $routes = Route::factory($quantity)->hasComments(1)->create();
+        $routes = Route::factory($quantity)->hasComments(2)->create();
 
         $this->reviewsCreator($routes, $quantity);
     }

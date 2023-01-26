@@ -1,0 +1,30 @@
+type Area {
+    id: ID!
+    crag_id: Int!
+    name: String!
+    location: String!
+    route_count: Int!
+    description: String!
+    detail: Json
+
+    crag: Crag! @with
+    routes: [Route!]! @with
+    comments: [Comment!]! @with @orderBy(column: "created_at", direction: DESC) @eq(key: "visible", value: true)
+}
+
+input createAreaInput @validator {
+    crag_id: Int!
+    name: String!
+    location: String!
+    route_count: Int!
+    description: String!
+    detail: Json
+}
+
+input updateAreaInput @validator {
+    name: String
+    location: String
+    route_count: Int
+    description: String
+    detail: Json
+}

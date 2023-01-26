@@ -14,6 +14,13 @@ class Comment extends Model
         'commentable_type',
         'commentable_id',
         'comment',
+        'visible',
+    ];
+
+    protected $hidden = [
+        'visible',
+        'created_at',
+        'updated_at',
     ];
 
     public function commentable(): MorphTo
