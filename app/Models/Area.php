@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,6 +22,11 @@ class Area extends Model
         'detail',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function crag(): BelongsTo
     {
         return $this->belongsTo(Crag::class);
@@ -34,5 +40,20 @@ class Area extends Model
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function scopeAreaRoutes(Builder $query): void
+    {
+        $query->join('routes', 'areas.id', '=', 'routes.area_id')
+            ->select(
+                'areas.id as area_id',
+                'areas.name as area_name',
+                'routes.id as route_id',
+                'routes.name as route_name',
+                'routes.grade',
+                'routes.quick_draw_count as quick_draws',
+                'routes.length',
+                'routes.detail',
+            );
     }
 }
