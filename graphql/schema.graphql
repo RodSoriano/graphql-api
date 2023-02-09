@@ -7,8 +7,7 @@ scalar Date
 scalar Json
 
 type Query {
-    crags: [Crag!]! @all
-    crag(id: ID! @eq): Crag! @find
+    crags(id: ID = 0): [Crag]
     cragAreas(id: ID!): Json!
     cragComments(id: ID!): Json!
 
