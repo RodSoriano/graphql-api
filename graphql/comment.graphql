@@ -1,6 +1,6 @@
 type Comment {
     id: ID!
-    commentable_type: String!
+    commentable_type: ModelType!
     commentable_id: Int!
     comment: String!
 }
