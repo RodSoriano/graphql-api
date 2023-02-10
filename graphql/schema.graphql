@@ -4,13 +4,20 @@
 #import comment.graphql
 #import enum.graphql
 
+
 scalar Date
 scalar Json
 
 type Query {
     crags(id: ID = 0): [Crag]
     areas(id: ID = 0): [Area]
-    routes(id: ID = 0): [Route]
+
+    routes(
+        id: ID = 0
+        grade: String = ""
+        type: RouteType = NULL
+        quick_draws: Int = 0
+    ): [Route]
 }
 
 type Mutation {
