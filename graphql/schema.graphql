@@ -2,25 +2,10 @@
 #import area.graphql
 #import route.graphql
 #import comment.graphql
+#import enum.graphql
 
 scalar Date
 scalar Json
-
-enum ModelType {
-    CRAG @enum (value: "Crag")
-    AREA @enum (value: "Area")
-    ROUTE @enum (value: "Route")
-}
-
-enum RouteType {
-    SPORT @enum (value: "Sport")
-    CRACK @enum (value: "Crack")
-    BIG_WALL @enum (value: "Big Wall")
-    MIXED @enum (value: "Mixed")
-    BOULDER @enum (value: "Boulder")
-    HIGHBALL @enum (value: "Highball")
-    DEEP_WATER_SOLO @enum (value: "Deep Water Solo")
-}
 
 type Query {
     crags(id: ID = 0): [Crag]
