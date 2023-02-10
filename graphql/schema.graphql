@@ -6,35 +6,29 @@
 scalar Date
 scalar Json
 
+enum ModelType {
+    CRAG @enum (value: "Crag")
+    AREA @enum (value: "Area")
+    ROUTE @enum (value: "Route")
+}
+
+enum RouteType {
+    SPORT @enum (value: "Sport")
+    CRACK @enum (value: "Crack")
+    BIG_WALL @enum (value: "Big Wall")
+    MIXED @enum (value: "Mixed")
+    BOULDER @enum (value: "Boulder")
+    HIGHBALL @enum (value: "Highball")
+    DEEP_WATER_SOLO @enum (value: "Deep Water Solo")
+}
+
 type Query {
     crags(id: ID = 0): [Crag]
-    cragAreas(id: ID!): Json!
-    cragComments(id: ID!): Json!
-
-    areas: [Area!]! @all
-    area(id: ID! @eq): Area! @find
-    areaRoutes(id: ID!): Json!
-    areaComments(id: ID!): Json!
-
-    routes: [Route!]! @all
-    route(id: ID! @eq): Route! @find
-    routeComments(id: ID!): Json!
-    routeReviews(id: ID!): Json!
+    areas(id: ID = 0): [Area]
+    routes(id: ID = 0): [Route]
 }
 
 type Mutation {
-    # createCrag(input: createCragInput! @spread): Crag @create
-    # updateCrag(id: ID!, input: updateCragInput! @spread): Crag @update
-    # deleteCrag(id: ID!): Crag @delete
-
-    # createArea(input: createAreaInput! @spread): Area @create
-    # updateArea(id: ID!, input: updateAreaInput! @spread): Area @update
-    # deleteArea(id: ID!): Area @delete
-
-    # createRoute(input: createRouteInput! @spread): Route @create
-    # updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
-    # deleteRoute(id: ID!): Route @delete
-
     createComment(
         commentable_type: String @rules(apply: ["required"])
         commentable_id: Int @rules(apply: ["required"])
