@@ -19,7 +19,7 @@ class RouteFactory extends Factory
         return [
             'area_id' => Area::inRandomOrder()->first(),
             'name' => fake()->streetSuffix(),
-            'grade' => fake()->randomFloat(),
+            'grade' => fake()->randomElement(['6a', '7a', '8a']),
             'type' => fake()->randomElement(RouteType::values()),
             'quick_draw_count' => fake()->numberBetween(1, 15),
             'length' => fake()->randomDigitNot(0),
