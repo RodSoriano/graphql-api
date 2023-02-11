@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Collection;
 
 final class Areas
 {
-    public function __invoke(mixed $_, array $args): Collection|Area
+    public function __invoke(mixed $_, array $args): Collection
     {
+        $query = [];
+
         if ($args['id']) {
-            return Area::where('id', $args['id'])->get();
+            $query['id'] = $args['id'];
         }
 
-        return Area::all();
+        return Area::where($query)->get();
     }
 }
