@@ -1,5 +1,6 @@
 <?php
 
+use App\Enum\RouteType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +15,8 @@ return new class extends Migration
             $table->foreignIdFor(Area::class)->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('grade');
-            $table->integer('quick_draw_count');
+            $table->enum('type', RouteType::values());
+            $table->integer('quick_draw_count')->nullable();
             $table->string('length');
             $table->string('setters');
             $table->string('first_ascend');

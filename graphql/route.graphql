@@ -3,7 +3,8 @@ type Route {
     area_id: Int!
     name: String!
     grade: String!
-    quick_draw_count: Int!
+    type: RouteType!
+    quick_draw_count: Int
     length: String!
     setters: String!
     first_ascend: String!

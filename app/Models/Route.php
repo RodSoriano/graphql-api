@@ -16,6 +16,7 @@ class Route extends Model
         'area_id',
         'name',
         'grade',
+        'type',
         'quick_draw_count',
         'length',
         'setters',

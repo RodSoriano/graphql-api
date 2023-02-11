@@ -5,10 +5,16 @@ namespace App\GraphQL\Queries;
 use App\Models\Area;
 use Illuminate\Database\Eloquent\Collection;
 
-final class AreaRoutes
+final class Areas
 {
     public function __invoke(mixed $_, array $args): Collection
     {
-        return Area::areaRoutes()->where('area_id', $args['id'])->get();
+        $query = [];
+
+        if ($args['id']) {
+            $query['id'] = $args['id'];
+        }
+
+        return Area::where($query)->get();
     }
 }

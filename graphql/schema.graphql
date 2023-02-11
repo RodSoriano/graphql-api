@@ -2,40 +2,25 @@
 #import area.graphql
 #import route.graphql
 #import comment.graphql
+#import enum.graphql
+
 
 scalar Date
 scalar Json
 
 type Query {
-    crags: [Crag!]! @all
-    crag(id: ID! @eq): Crag! @find
-    cragAreas(id: ID!): Json!
-    cragComments(id: ID!): Json!
+    crags(id: ID = 0): [Crag]!
+    areas(id: ID = 0): [Area]!
 
-    areas: [Area!]! @all
-    area(id: ID! @eq): Area! @find
-    areaRoutes(id: ID!): Json!
-    areaComments(id: ID!): Json!
-
-    routes: [Route!]! @all
-    route(id: ID! @eq): Route! @find
-    routeComments(id: ID!): Json!
-    routeReviews(id: ID!): Json!
+    routes(
+        id: ID = 0
+        grade: String = ""
+        type: RouteType = NULL
+        quick_draws: Int = 0
+    ): [Route]!
 }
 
 type Mutation {
-    # createCrag(input: createCragInput! @spread): Crag @create
-    # updateCrag(id: ID!, input: updateCragInput! @spread): Crag @update
-    # deleteCrag(id: ID!): Crag @delete
-
-    # createArea(input: createAreaInput! @spread): Area @create
-    # updateArea(id: ID!, input: updateAreaInput! @spread): Area @update
-    # deleteArea(id: ID!): Area @delete
-
-    # createRoute(input: createRouteInput! @spread): Route @create
-    # updateRoute(id: ID!, input: updateRouteInput! @spread): Route @update
-    # deleteRoute(id: ID!): Route @delete
-
     createComment(
         commentable_type: String @rules(apply: ["required"])
         commentable_id: Int @rules(apply: ["required"])
