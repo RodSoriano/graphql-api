@@ -9,7 +9,7 @@ scalar Date
 scalar Json
 
 type Query {
-    crags(id: ID = 0): [Crag]
+    crags(id: ID = 0): [Crag]!
     areas(id: ID = 0): [Area]
 
     routes(
