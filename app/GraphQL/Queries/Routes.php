@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 final class Routes
 {
-    public function __invoke(mixed $_, array $args): Collection|Route
+    public function __invoke(mixed $_, array $args): Collection
     {
         $query = [];
 
