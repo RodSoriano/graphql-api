@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Collection;
 
 final class Crags
 {
-    public function __invoke(mixed $_, array $args): Collection|Crag
+    public function __invoke(mixed $_, array $args): Collection
     {
+        $query = [];
+
         if ($args['id']) {
-            return Crag::where('id', $args['id'])->get();
+            $query['id'] = $args['id'];
         }
 
-        return Crag::all();
+        return Crag::where($query)->get();
     }
 }
