@@ -17,7 +17,7 @@ type Query {
         grade: String = ""
         type: RouteType = NULL
         quick_draws: Int = 0
-    ): [Route]
+    ): [Route]!
 }
 
 type Mutation {
