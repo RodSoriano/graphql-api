@@ -26,6 +26,11 @@ class Route extends Model
         'detail',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class);
