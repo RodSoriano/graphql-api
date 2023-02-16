@@ -4,7 +4,6 @@
 #import comment.graphql
 #import enum.graphql
 
-
 scalar Date
 scalar Json
 
