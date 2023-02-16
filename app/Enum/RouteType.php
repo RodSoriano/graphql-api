@@ -4,13 +4,13 @@ namespace App\Enum;
 
 enum RouteType: string
 {
-    case SPORT = 'Sport';
-    case CRACK = 'Crack';
-    case BIG_WALL = 'Big Wall';
-    case MIXED = 'Mixed';
-    case BOULDER = 'Boulder';
-    case HIGHBALL = 'Highball';
-    case DEEP_WATER_SOLO = 'Deep Water Solo';
+    case SPORT = 'SPORT';
+    case CRACK = 'CRACK';
+    case BIG_WALL = 'BIG_WALL';
+    case MIXED = 'MIXED';
+    case BOULDER = 'BOULDER';
+    case HIGHBALL = 'HIGHBALL';
+    case DEEP_WATER_SOLO = 'DEEP_WATER_SOLO';
 
     public static function values(): array
     {

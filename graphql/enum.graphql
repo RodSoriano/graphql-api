@@ -1,10 +1,10 @@
 enum RouteType {
-    SPORT @enum (value: "Sport")
-    CRACK @enum (value: "Crack")
-    BIG_WALL @enum (value: "Big Wall")
-    MIXED @enum (value: "Mixed")
-    BOULDER @enum (value: "Boulder")
-    HIGHBALL @enum (value: "Highball")
-    DEEP_WATER_SOLO @enum (value: "Deep Water Solo")
+    SPORT @enum (value: "SPORT")
+    CRACK @enum (value: "CRACK")
+    BIG_WALL @enum (value: "BIG_WALL")
+    MIXED @enum (value: "MIXED")
+    BOULDER @enum (value: "BOULDER")
+    HIGHBALL @enum (value: "HIGHBALL")
+    DEEP_WATER_SOLO @enum (value: "DEEP_WATER_SOLO")
     NULL @enum (value: null)
 }
