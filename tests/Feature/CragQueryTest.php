@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Crag;
 use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
