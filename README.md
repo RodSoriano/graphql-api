@@ -1,19 +1,23 @@
 ## First Things First
 
-This is a project for climbing including all its different disciplines, it allows you to show different places where you can go, and have on hand all its relevant information.  
+This is a project for outdoor climbing, includes all its different disciplines, it shows different places where you can go and have on hand, all its relevant information about each place.  
 
 The project holds three main models:
 - Crags
 - Areas
 - Routes  
 
-You can query each one of those models bringing whole collections or specified models by id or in the case of the route model it comes with a couple more filters.  
+You can query each one of those models bringing whole collections or filter them by id. In the case of the "Route" model it comes with a couple more searching options, you can filter routes by:
 
-Every one of them can be commented by a guest user that can be approved manually afterwards.  
+- Type
+- Grade
+- Quick draws
 
-The comment feature also has a filter integration so no profanity can be sent to the API.  
+Every one of them can be commented by a guest user these comments by default have the attribute "is_visible" off so the admin of the app can check them manually before showing it to the end user.  
 
-It also includes a playground for you to test your queries or mutations on.
+The comment feature also has a filter integration so no profanity can be sent to the API.
+
+The app also includes a playground for you to test your queries or mutations.
 ````
 localhost:8000/graphql-playground
 ````
@@ -28,12 +32,21 @@ $ git clone https://github.com/RodSoriano/graphql-api.git
 Now run the command
 ````
 $ composer install
-$ composer update
 ````
 
-Create a database of your choice and then match that information with the environment variables in charge of the database connection.  
+## Database
 
-Then set up the env. file copying the content of the <strong>env.example</strong> file.  
+Set up the env. file copying the content of the <strong>env.example</strong> file.
+
+Create a database of your choice and then match that information with the "environment variables" in charge of the database connection, the database variables are the following.
+````
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT= your.db.port
+DB_DATABASE=your_db_name
+DB_USERNAME=db_username
+DB_PASSWORD=db_password
+````
 
 Now you can use the "migrate" and "seed" command to have dummy data on your database for testing or showing purposes.
 ````
