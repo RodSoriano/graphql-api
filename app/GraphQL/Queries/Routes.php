@@ -9,24 +9,24 @@ final class Routes
 {
     public function __invoke(mixed $_, array $args): Collection
     {
-        $query = [];
+        $query = Route::query();
 
         if ($args['id']) {
-            $query['id'] = $args['id'];
+            $query->where('id', $args['id']);
         }
 
         if ($args['grade']) {
-            $query['grade'] = $args['grade'];
+            $query->where('grade', $args['grade']);
         }
 
         if ($args['quick_draws']) {
-            $query['quick_draw_count'] = $args['quick_draws'];
+            $query->where('quick_draw_count', $args['quick_draws']);
         }
 
         if ($args['type']) {
-            $query['type'] = $args['type'];
+            $query->where('type', $args['type']);
         }
 
-        return Route::where($query)->get();
+        return $query->get();
     }
 }

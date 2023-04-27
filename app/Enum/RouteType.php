@@ -9,7 +9,7 @@ enum RouteType: string
     case BIG_WALL = 'Big Wall';
     case MIXED = 'Mixed';
     case BOULDER = 'Boulder';
-    case HIGHBALL = 'Highball';
+    case HIGHBALL = 'High-Ball';
     case DEEP_WATER_SOLO = 'Deep Water Solo';
 
     public static function values(): array

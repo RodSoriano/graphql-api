@@ -9,12 +9,12 @@ final class Areas
 {
     public function __invoke(mixed $_, array $args): Collection
     {
-        $query = [];
+        $query = Area::query();
 
         if ($args['id']) {
-            $query['id'] = $args['id'];
+            $query->where('id',  $args['id']);
         }
 
-        return Area::where($query)->get();
+        return $query->get();
     }
 }

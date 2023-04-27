@@ -12,7 +12,8 @@
         "laravel/tinker": "^2.7",
         "mll-lab/laravel-graphql-playground": "^2.6",
         "nuwave/lighthouse": "^5.69",
-      "ext-http": "*"
+      "ext-http": "*",
+      "ext-pdo": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
